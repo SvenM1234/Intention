@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}France contractor | echec envoi message{% endblock %}
+
+{% block body %}
+<main>
+    <div class="espace"></div>
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Echec!</strong> Votre message n'a pas été transmis <a href="{{path('contact')}}" class="alert-link">Ressayer</a>.
+        </div>
+</main>
+
+{% endblock %}

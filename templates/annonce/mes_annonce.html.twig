@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}France contractor | Annonces{% endblock %}
+
+{% block body %}
+<main class="main-page">
+<div class="espace"></div>
+    <div class="corps-annonce">
+
+        <h1 class="titre-annonce">Mes Annonces</h1>
+        {% if app.user %}
+            <div class="container-button-annonce">
+                <a href="{{path('creer_annonce')}}"><button type="button" class="btn btn-info">Ajouter une annonce</button></a>
+             </div>
+        {% endif %}
+        <div>
+             {% for annonce in annonces %}
+                    <div class="card bg-secondary mb-3 border-primary last">
+                        <div class="titre-img">
+                            {% if annonce.photo %}
+                                <div class="container-img-annonce">
+                                    <img src="uploads/photo-annonce/{{annonce.photo}}" alt="photo annonce {{annonce.id}}">
+                                </div>
+                            {% endif %}
+                           <div class="card-header bold">
+                                <div class="titre-annonce">{{annonce.titre}}</div>
+                                <hr class="hr-date">
+                                <small class="small-date">Posté le {{annonce.DateCreation | date ('d/m/Y')}} à {{annonce.DateCreation | date ('H:i') }}</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{annonce.description}}</p>
+                            <div class="container-btn-all">
+                                <div class="container-btn-candidat">
+                                    {% set nbCandidature = 0 %}
+                                    {% for candidature in candidatures %}
+                                        {% for candidat in candidature %}
+                                            {% if candidat.fkAnnonce.id == annonce.id %}
+                                                {% set nbCandidature =  nbCandidature + 1 %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endfor %}
+                                    {{nbCandidature}} 
+                                    {% if nbCandidature > 1 %}
+                                        Candidatures
+                                    {% else %}
+                                        Candidature
+                                    {% endif %}
+
+                                </div>
+                            {% if app.user %}
+                                <div class="container-btn">
+                                    <a href=""><img class="bt" src="resources/pencil.png" alt=""></a>
+                                    <a href="{{path('supprimer_annonce', {id: annonce.id})}}"><img class="bt" src="resources/trash.png" alt=""></a>
+                                </div>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+
+    
+
+   
+    </div>
+
+
+</main>
+
+{% endblock %}

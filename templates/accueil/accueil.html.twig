@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SecurityController!{% endblock %}
+
+{% block body %}
+<main>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="video/video_acceuil_def.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container-btn-suite">
+        <a href="#titre-last-annonce"><img class="bt btn-suite" src="resources/bouton-suite-noir.svg" alt="bouton voir la suite"></a>
+    </div>
+    <div>
+        <div class="container-entete">
+            <div class="bare-left"></div>
+            <div class="container-titre-accueil">
+            <h1 class="titre-accueil">France Contractor</h1>
+            </div>
+            <div class="container-bare-right">
+                <div class="bare-right"></div>
+            </div>
+        </div>
+        <div>
+            <div class="last-annonce">
+             <h2 id="titre-last-annonce">Les dernières annonces</h2>
+             <div class="container-button-annonce">
+                <a href="{{path('creer_annonce')}}"><button type="button" class="btn btn-info">Ajouter une annonce</button></a>
+             </div>
+            {% set i = 0 %}
+            {% for annonce in annonces %}
+
+               {% if i < 5 %}
+                    {% set i = i + 1 %}
+
+                    <div class="card bg-secondary mb-3 border-primary last">
+                        <div class="titre-img">
+                            {% if annonce.photo %}
+                                <div class="container-img-annonce">
+                                    <img src="uploads/photo-annonce/{{annonce.photo}}" alt="photo annonce {{annonce.id}}">
+                                </div>
+                            {% endif %}
+                            <div class="card-header bold">
+                                <div class="titre-annonce">{{annonce.titre}}</div>
+                                <hr class="hr-date">
+                                <small class="small-date">Posté le {{annonce.DateCreation | date ('d/m/Y')}} à {{annonce.DateCreation | date ('H:i') }}</small>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{annonce.description}}</p>
+                            <div class="container-btn-all">
+                                <div class="container-btn-postuler">
+                                    <a href="{{path('postuler', {id: annonce.id})}}"><button type="button" class="btn btn-outline-warning btn-sm">Postuler</button></a>
+                                </div>
+                                {% if app.user %}
+                                {% if app.user.role == "admin" %}
+                                <div class="container-btn">
+                                    <a href="{{path('modifier_annonce', {id: annonce.id})}}"><img class="bt" src="resources/pencil.png" alt=""></a>
+                                    <a href="{{path('accueil_supprimer_annonce', {id: annonce.id})}}"><img class="bt" src="resources/trash.png" alt=""></a>
+                                </div>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+               {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

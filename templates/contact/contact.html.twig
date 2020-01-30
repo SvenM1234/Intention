@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}France contractor | Contact{% endblock %}
+
+{% block body %}
+<main>
+    <div class="espace"></div>
+    <div class="form-container">
+        <h1 class="titre-form">Contact</h1>
+        {{form_start(form)}}
+
+            {{ form_row(form.prenom,{'label':false, 'attr': {'placeholder': "prénom" }}) }}
+            {{ form_row(form.nom,{'label':false, 'attr': {'placeholder': "nom" }}) }}
+            {{ form_row(form.email,{'label':false, 'attr': {'placeholder': "email" }}) }}
+            {{ form_row(form.message,{'label':false, 'attr': {'placeholder': "message" }}) }}
+
+            <button  type="submit" class="btn btn-outline-primary">Envoyer</button>
+        {{form_end(form)}}
+    </div>
+</main>
+
+{% endblock %}

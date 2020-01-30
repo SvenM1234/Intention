@@ -1,0 +1,230 @@
+html{
+    scroll-behavior: smooth;
+}
+
+nav{
+    position: fixed !important;
+    width: 100%;
+    z-index: 999999;
+}
+
+.bold{
+    font-weight: bolder !important;
+    font-size: 1rem;
+}
+
+.btn-user{
+    display: flex;
+}
+
+.conteneur-photo-annonce img{
+    width: 100%;
+}
+
+.video-container{
+    text-align: center;
+    max-height: 720px;
+    overflow: hidden;
+}
+
+.video-container video{
+    width: 100%;
+    max-width: 1980px;
+}
+
+.container-btn-suite{
+    display: flex;
+    justify-content: center;
+}
+
+.bt:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
+.btn-suite{
+    transform: rotate(180deg);
+    width: 50px;
+    margin-top: 2%
+}
+
+main{
+    min-height:90vh;
+}
+
+.bare-left{
+    height: 15px;
+    width: 70%;
+    margin-top: 1%;
+    background-color: #734D3F;
+}
+
+.container-bare-right{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+}
+
+.bare-right{
+    text-align: right;
+    height: 15px;
+    width: 70%;
+    background-color: #734D3F;
+}
+
+.container-entete{
+    background-color:rgba(208, 217, 217,0.3);
+}
+
+.titre-accueil{
+    padding: 3% 4%;
+    font-size: 3rem !important;
+    font-weight: bold;
+}
+
+.titre-form{
+    margin: 5%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container form{
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container div{
+    width: 100%;
+}
+
+.container-img-annonce img{
+    width: 100%;
+}
+
+.last-annonce{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.last-annonce h2{
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.container-button-annonce{
+    height: 4vw;
+    min-height: 75px;
+    max-height: 115px;
+}
+
+.last{
+    display: flex;
+    flex-direction: row !important ;
+    width: 90%;
+    max-width: 800px;
+}
+
+.titre-img{
+    width: 33%;
+}
+
+.container-btn img{
+    width: 24px;
+}
+
+.container-btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* annonce */
+
+.titre-annonce{
+    text-align: center;
+}
+
+.container-btn-postuler{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-btn-all{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-btn-all-mes, .container-btn-candidat{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.espace{
+   height: 84.75px;
+}
+
+.corps-annonce{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titre-annonce{
+    margin-bottom: 4%;
+}
+
+.small-date{
+    font-size: 0.6rem;
+}
+
+.hr-date{
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    height: 0.5px;
+    width: 90%;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-btn-annonce{
+    margin: 0 3% 3% 3%;
+}
+
+
+/* Contact */
+
+.non-prenom{
+    display: flex;
+    justify-content: center;
+
+}
+
+/*  form input file */
+

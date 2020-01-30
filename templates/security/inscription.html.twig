@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}France Contractor | Inscription{% endblock %}
+
+{% block body %}
+<main>
+    <div class="espace"></div>
+    <div class="form-container">
+        <h1 class="titre-form">Inscription</h1>
+        {{form_start(form)}}
+
+            {{ form_row(form.username,{'label':false, 'attr': {'placeholder': "votre username" }}) }}
+            {{ form_row(form.email,{'label':false, 'attr': {'placeholder': "votre email" }}) }}
+            {{ form_row(form.password,{'label':false, 'attr': {'placeholder': "votre password" }}) }}
+            {{ form_row(form.confirm_password,{'label':false, 'attr': {'placeholder': "confirmez votre password" }}) }}
+
+            <button  type="submit" class="btn btn-outline-primary">S'inscire</button>
+        {{form_end(form)}}
+    </div>
+</main>
+
+
+
+
+
+
+{% endblock %}

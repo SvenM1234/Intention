@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}France Contractor | Connexion{% endblock %}
+
+{% block body %}
+<main>
+<div class="espace"></div>
+    <div class="form-container">
+        <h1 class="titre-form">Connexion</h1>
+        <form action="{{path('security_connexion')}}" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" type="text" placeholder="email" name="_username" required> 
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="password" name="_password" required> 
+            </div>
+            <button type="submit" class="btn btn-success">Connexion</button>
+
+        </form>
+    </div>
+</main>
+{% endblock %}
